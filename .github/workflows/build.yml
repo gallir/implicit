@@ -155,8 +155,8 @@ jobs:
           python-version: 3.9
       - name: Push to PyPi
         env:
-          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
           pip install --upgrade wheel pip setuptools twine
           twine upload *

@@ -61,7 +61,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: [36, 37, 38, 39, 310, 311]
+        python-version: [39, 310, 311]
         cibw-arch: [auto, aarch64]
         exclude:
           - os: macos-latest
@@ -106,7 +106,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9, '3.10', '3.11']
+        python-version: [3.9, '3.10', '3.11']
         os: [ubuntu-latest, windows-latest]
 
     steps:

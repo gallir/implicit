@@ -131,7 +131,7 @@ jobs:
 
     - name: Install wheel
       run: |
-        pip install --force-reinstall --no-deps --no-index --find-links . implicit
+        pip install --force-reinstall --no-deps --no-index --find-links . wbimplicit
     - name: Run unittests
       run: |
         python -m pytest implicit_source/tests
@@ -139,7 +139,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    if: "startsWith(github.ref, 'refs/tags/')"
+    if: startsWith(github.ref, 'refs/tags/')
     needs: [test-wheels]
     steps:
       - uses: actions/download-artifact@v3

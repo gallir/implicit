@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Build
+name: Build for PyPI
 
 on:
   workflow_dispatch:
@@ -11,6 +11,9 @@ on:
       - v*
   pull_request:
     branches: [ main ]
+
+permissions:
+  contents: write
 
 jobs:
   lint:
